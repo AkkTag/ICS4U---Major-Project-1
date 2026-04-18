@@ -8,7 +8,7 @@ def setup_questions_page(window, main_frame, frames, show_frame, app_data):
     from PIL import Image, ImageDraw, ImageTk
 
     OUTPUT_PATH = Path(__file__).parent
-    ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Akshaj Homework\ICS4U - Major Project 1\build\assetsQuestions\frame0")
+    ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Akshaj Homework\ICS4U - Major Project 1\ICS4U - Major Project 1\build\assetsQuestions\frame0")
 
 
     def relative_to_assets(path: str) -> Path:

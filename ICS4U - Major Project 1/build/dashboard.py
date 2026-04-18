@@ -11,7 +11,7 @@ def setup_dashboard_page(window, main_frame, frames, show_frame, app_data, detai
     from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, Label, Frame
 
     OUTPUT_PATH = Path(__file__).parent
-    ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Akshaj Homework\ICS4U - Major Project 1\build\assetsDashboard\frame0")
+    ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Akshaj Homework\ICS4U - Major Project 1\ICS4U - Major Project 1\build\assetsDashboard\frame0")
 
 
     def relative_to_assets(path: str) -> Path:

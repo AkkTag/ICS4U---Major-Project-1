@@ -16,7 +16,7 @@ def setup_details_page(window, main_frame, frames, show_frame, app_data):
     import os
 
     OUTPUT_PATH = Path(__file__).parent
-    ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Akshaj Homework\ICS4U - Major Project 1\build\assetsDetails\frame0")
+    ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Akshaj Homework\ICS4U - Major Project 1\ICS4U - Major Project 1\build\assetsDetails\frame0")
 
     pfp_path = {"value": None}
     #pf_preview_img = {"value": None}  # prevents garbage collection

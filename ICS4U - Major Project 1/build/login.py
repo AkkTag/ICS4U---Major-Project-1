@@ -10,7 +10,7 @@ def setup_login_page(window, main_frame, frames, show_frame, app_state, app_data
     from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage, Label, Frame
 
     OUTPUT_PATH = Path(__file__).parent
-    ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Akshaj Homework\ICS4U - Major Project 1\build\assetsLog_in\frame0")
+    ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Akshaj Homework\ICS4U - Major Project 1\ICS4U - Major Project 1\build\assetsLog_in\frame0")
 
 
     def relative_to_assets(path: str) -> Path:
@@ -302,7 +302,7 @@ def setup_login_page(window, main_frame, frames, show_frame, app_state, app_data
         username_found = False
         password_found = False
 
-        with open("usersInfo.txt", "r") as f:
+        with open(Path(__file__).parent / "usersInfo.txt", "r") as f:
             for line in f:
                 splitted = line.strip().split(", ")  # Assuming username and password are separated by a comma
 
@@ -321,7 +321,7 @@ def setup_login_page(window, main_frame, frames, show_frame, app_state, app_data
         if username_found or password_found:
             return
                 
-        with open("usersInfo.txt", "a") as f:
+        with open(Path(__file__).parent / "usersInfo.txt", "a") as f:
             info = f"{usernameText}, {passwordText}"
             f.write(f"{info}\n")
         
@@ -364,7 +364,7 @@ def setup_login_page(window, main_frame, frames, show_frame, app_state, app_data
         username_found = False
         password_found = False
 
-        with open("usersInfo.txt", "r") as f:
+        with open(Path(__file__).parent / "usersInfo.txt", "r") as f:
             for line in f:
                 splitted = line.strip().split(", ")  # Since username and password are separated by a comma
 

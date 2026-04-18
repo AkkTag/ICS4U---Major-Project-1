@@ -9,7 +9,7 @@ def setup_loading_page(window, main_frame, frames, show_frame, details_entries, 
     #from dashboard import load_dashboard
 
     OUTPUT_PATH = Path(__file__).parent
-    ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Akshaj Homework\ICS4U - Major Project 1\build\assetsLoading\frame0")
+    ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Akshaj Homework\ICS4U - Major Project 1\ICS4U - Major Project 1\build\assetsLoading\frame0")
 
 
     def relative_to_assets(path: str) -> Path:
