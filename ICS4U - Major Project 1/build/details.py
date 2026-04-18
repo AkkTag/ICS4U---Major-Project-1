@@ -170,7 +170,7 @@ def setup_details_page(window, main_frame, frames, show_frame, app_data):
         user = app_data["current_user"]
 
 
-        with open("personalInfo.txt", "a") as f:
+        with open(Path(__file__).parent / "personalInfo.txt", "a") as f:
             f.write(user + " | " + " # ".join(entryList) + " # " + "False" + "\n")
 
         if user not in app_data["users"]:

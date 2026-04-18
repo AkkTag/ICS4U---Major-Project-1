@@ -66,7 +66,7 @@ def setup_dashboard_page(window, main_frame, frames, show_frame, app_data, detai
 
         app_data["users"][user][key] = value
         
-        with open("personalInfo.txt", "w") as f:
+        with open(Path(__file__).parent / "personalInfo.txt", "w") as f:
 
             for user, info in app_data["users"].items():
                 line = user + " | " + " # ".join(info.values()) + "\n"

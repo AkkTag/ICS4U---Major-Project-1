@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from common import setup_window, convert_scores
 from login import setup_login_page
 from loading import setup_loading_page
@@ -12,7 +14,7 @@ def load_users_from_file(app_data):
     app_data["users"] = {}
 
 
-    with open("personalInfo.txt", "r") as f:
+    with open(Path(__file__).parent / "personalInfo.txt", "r") as f:
         for line in f:
             line = line.strip()
             if not line:

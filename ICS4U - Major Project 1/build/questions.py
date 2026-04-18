@@ -232,7 +232,7 @@ def setup_questions_page(window, main_frame, frames, show_frame, app_data):
         
         personalityData_str = ", ".join([f"{ptype}: {score}" for ptype, score in personalityType_scores.items()])
 
-        with open("personalInfo.txt", "r") as f:
+        with open(Path(__file__).parent / "personalInfo.txt", "r") as f:
             lines = f.readlines()
             for i in range(len(lines)):
                 splitted = lines[i].strip().split(" | ")
@@ -248,7 +248,7 @@ def setup_questions_page(window, main_frame, frames, show_frame, app_data):
             if not found:
                 print("Error: user not found in personalInfo.txt")
 
-        with open("personalInfo.txt", "w") as g:
+        with open(Path(__file__).parent / "personalInfo.txt", "w") as g:
             
             for i in range(len(lines)):
                 g.write(lines[i])
