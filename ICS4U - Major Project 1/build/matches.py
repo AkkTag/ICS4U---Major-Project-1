@@ -32,9 +32,10 @@ def setup_matches_page(window, main_frame, frames, show_frame, app_data):
             show_empty_state()
 
         else:
-            show_results_state()
             matches = find_matches(app_data["current_user"], app_data)
+            print("Matches:", matches)
             fill_matches(matches)
+            show_results_state()
 
     def show_empty_state():
         results_state.place_forget()
@@ -64,8 +65,15 @@ def setup_matches_page(window, main_frame, frames, show_frame, app_data):
 
 
     def is_valid_match(user1, user2):
+        
+        # print(user1, app_data["users"][user1]["age"], type(app_data["users"][user1]["age"]))
+        # print(user2, app_data["users"][user2]["age"], type(app_data["users"][user2]["age"]))
 
-        if not(user1["gender"] == user2["gender"]) and abs(user1["age"] - user2["age"]) <= 4: #checking gender AND age difference as criteria for a valid match
+        print(user1["age"], type(user1["age"]), "|", user2["age"], type(user2["age"]))
+        #print("MATCH FOUND")
+        #return True
+        if (user1["gender"] != user2["gender"]) and abs(user1["age"] - user2["age"]) <= 4: #checking gender AND age difference as criteria for a valid match
+            print("MATCH FOUND")
             return True
         return False
     
@@ -105,8 +113,10 @@ def setup_matches_page(window, main_frame, frames, show_frame, app_data):
             # Compute compatibility
             match_count, total_score = compatibility_score(current_atts, other_atts)
             
-            if match_count > 0: #only consider users with at least one shared top trait as matches
-                scores.append((username, match_count, total_score))
+            # if match_count > 0: #only consider users with at least one shared top trait as matches
+            #     scores.append((username, match_count, total_score))
+
+            scores.append((username, match_count, total_score))
         
 
         scores.sort(key=lambda x: (x[1], x[2]), reverse=True) #sorting priority: by match count first, then by total score as a tiebreaker 
@@ -122,6 +132,9 @@ def setup_matches_page(window, main_frame, frames, show_frame, app_data):
 
     #to update the UI, filling in the fields with the match's information
     def fill_matches(user_data):
+        
+        for t in texts:
+            results_canvas.itemconfig(t, text="")
 
         user1 = user_data["premium"][0] if user_data["premium"] else None
         user2 = user_data["star"][0] if user_data["star"] else None

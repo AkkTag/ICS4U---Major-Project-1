@@ -69,7 +69,7 @@ def setup_dashboard_page(window, main_frame, frames, show_frame, app_data, detai
         with open(Path(__file__).parent / "personalInfo.txt", "w") as f:
 
             for user, info in app_data["users"].items():
-                line = user + " | " + " # ".join(info.values()) + "\n"
+                line = user + " | " + " # ".join(str(v) for v in info.values()) + "\n"
                 f.write(line)
 
         # Lock again

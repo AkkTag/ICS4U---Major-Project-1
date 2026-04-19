@@ -26,6 +26,9 @@ def setup_window(bg_color="#F8E599", title="Online Romance", frame_names=["login
 
 def convert_scores(scores_str):
     scores = {}
+
+    scores_str = scores_str.strip("{}")
+    
     for item in scores_str.split(", "):
         if ": " in item:
             ptype, score = item.split(": ")
